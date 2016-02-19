@@ -3,20 +3,20 @@ namespace SimpleSlider\Test\TestCase\Model\Table;
 
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
-use SimpleSlider\Model\Table\GalleriesTable;
+use SimpleSlider\Model\Table\SlidersTable;
 
 /**
- * SimpleSlider\Model\Table\GalleriesTable Test Case
+ * SimpleSlider\Model\Table\SlidersTable Test Case
  */
-class GalleriesTableTest extends TestCase
+class SlidersTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \SimpleSlider\Model\Table\GalleriesTable
+     * @var \SimpleSlider\Model\Table\SlidersTable
      */
-    public $Galleries;
+    public $Sliders;
 
     /**
      * Fixtures
@@ -24,9 +24,7 @@ class GalleriesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'plugin.simple_slider.galleries',
-        'plugin.simple_slider.attrs',
-        'plugin.simple_slider.slides'
+        'plugin.simple_slider.sliders'
     ];
 
     /**
@@ -37,8 +35,8 @@ class GalleriesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Galleries') ? [] : ['className' => 'SimpleSlider\Model\Table\GalleriesTable'];
-        $this->Galleries = TableRegistry::get('Galleries', $config);
+        $config = TableRegistry::exists('Sliders') ? [] : ['className' => 'SimpleSlider\Model\Table\SlidersTable'];
+        $this->Sliders = TableRegistry::get('Sliders', $config);
     }
 
     /**
@@ -48,7 +46,7 @@ class GalleriesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Galleries);
+        unset($this->Sliders);
 
         parent::tearDown();
     }
@@ -69,16 +67,6 @@ class GalleriesTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

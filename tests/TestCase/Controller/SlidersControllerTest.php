@@ -2,12 +2,12 @@
 namespace SimpleSlider\Test\TestCase\Controller;
 
 use Cake\TestSuite\IntegrationTestCase;
-use SimpleSlider\Controller\GalleriesController;
+use SimpleSlider\Controller\SlidersController;
 
 /**
- * SimpleSlider\Controller\GalleriesController Test Case
+ * SimpleSlider\Controller\SlidersController Test Case
  */
-class GalleriesControllerTest extends IntegrationTestCase
+class SlidersControllerTest extends IntegrationTestCase
 {
 
     /**
@@ -16,7 +16,7 @@ class GalleriesControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'plugin.simple_slider.galleries'
+        'plugin.simple_slider.sliders'
     ];
 
     /**

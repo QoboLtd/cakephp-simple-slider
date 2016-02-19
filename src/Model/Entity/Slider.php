@@ -4,20 +4,17 @@ namespace SimpleSlider\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Gallery Entity.
+ * Slider Entity.
  *
  * @property string $id
  * @property string $title
- * @property string $link
- * @property string $class
- * @property string $attr_id
- * @property \SimpleSlider\Model\Entity\Attr $attr
- * @property string $caption
- * @property \Cake\I18n\Time $created
- * @property \Cake\I18n\Time $modified
- * @property \SimpleSlider\Model\Entity\Slide[] $slides
+ * @property string $alias
+ * @property bool $shuffle
+ * @property bool $hover
+ * @property int $delay
+ * @property string $size
  */
-class Gallery extends Entity
+class Slider extends Entity
 {
 
     /**
