@@ -1,30 +1,7 @@
 <?php
-$this->extend('../Layout/TwitterBootstrap/dashboard');
-
-
-$this->start('tb_actions');
-?>
-<li><?= $this->Html->link(__('Edit Gallery'), ['action' => 'edit', $gallery->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Gallery'), ['action' => 'delete', $gallery->id], ['confirm' => __('Are you sure you want to delete # {0}?', $gallery->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Galleries'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Gallery'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Slides'), ['controller' => 'Slides', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Slide'), ['controller' => 'Slides', 'action' => 'add']) ?> </li>
-<?php
-$this->end();
-
-$this->start('tb_sidebar');
-?>
-<ul class="nav nav-sidebar">
-<li><?= $this->Html->link(__('Edit Gallery'), ['action' => 'edit', $gallery->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Gallery'), ['action' => 'delete', $gallery->id], ['confirm' => __('Are you sure you want to delete # {0}?', $gallery->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Galleries'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Gallery'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Slides'), ['controller' => 'Slides', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Slide'), ['controller' => 'Slides', 'action' => 'add']) ?> </li>
-</ul>
-<?php
-$this->end();
+$this->extend('QoboAdminPanel./Common/panel-wrapper');
+$this->assign('title', __d('QoboAdminPanel', 'Galleries'));
+$this->assign('panel-title', __d('QoboAdminPanel', 'Galleries information'));
 ?>
 <div class="panel panel-default">
     <!-- Panel header -->
