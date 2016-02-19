@@ -28,23 +28,6 @@ class SlidesController extends AppController
     }
 
     /**
-     * View method
-     *
-     * @param string|null $id Slide id.
-     * @return void
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $slide = $this->Slides->get($id, [
-            'contain' => ['Sliders']
-        ]);
-
-        $this->set('slide', $slide);
-        $this->set('_serialize', ['slide']);
-    }
-
-    /**
      * Add method
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
