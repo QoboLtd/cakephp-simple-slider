@@ -4,8 +4,8 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 $this->start('tb_actions');
 ?>
     <li><?= $this->Html->link(__('New Slide'), ['action' => 'add']); ?></li>
-    <li><?= $this->Html->link(__('List Galleries'), ['controller' => 'Galleries', 'action' => 'index']); ?></li>
-    <li><?= $this->Html->link(__('New Gallery'), ['controller' => ' Galleries', 'action' => 'add']); ?></li>
+    <li><?= $this->Html->link(__('List Sliders'), ['controller' => 'Sliders', 'action' => 'index']); ?></li>
+    <li><?= $this->Html->link(__('New Slider'), ['controller' => ' Sliders', 'action' => 'add']); ?></li>
 <?php $this->end(); ?>
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
 
@@ -13,11 +13,11 @@ $this->start('tb_actions');
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id'); ?></th>
-            <th><?= $this->Paginator->sort('gallery_id'); ?></th>
+            <th><?= $this->Paginator->sort('slider_id'); ?></th>
             <th><?= $this->Paginator->sort('title'); ?></th>
             <th><?= $this->Paginator->sort('link'); ?></th>
             <th><?= $this->Paginator->sort('class'); ?></th>
-            <th><?= $this->Paginator->sort('attr_id'); ?></th>
+            <th><?= $this->Paginator->sort('identifier'); ?></th>
             <th><?= $this->Paginator->sort('caption'); ?></th>
             <th class="actions"><?= __('Actions'); ?></th>
         </tr>
@@ -27,12 +27,12 @@ $this->start('tb_actions');
         <tr>
             <td><?= h($slide->id) ?></td>
             <td>
-                <?= $slide->has('gallery') ? $this->Html->link($slide->gallery->title, ['controller' => 'Galleries', 'action' => 'view', $slide->gallery->id]) : '' ?>
+                <?= $slide->has('slider') ? $this->Html->link($slide->slider->title, ['controller' => 'Sliders', 'action' => 'view', $slide->slider->id]) : '' ?>
             </td>
             <td><?= h($slide->title) ?></td>
             <td><?= h($slide->link) ?></td>
             <td><?= h($slide->class) ?></td>
-            <td><?= h($slide->attr_id) ?></td>
+            <td><?= h($slide->identifier) ?></td>
             <td><?= h($slide->caption) ?></td>
             <td class="actions">
                 <?= $this->Html->link('', ['action' => 'view', $slide->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>

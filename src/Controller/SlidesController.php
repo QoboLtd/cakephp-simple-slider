@@ -19,7 +19,7 @@ class SlidesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Galleries']
+            'contain' => ['Sliders']
         ];
         $slides = $this->paginate($this->Slides);
 
@@ -37,7 +37,7 @@ class SlidesController extends AppController
     public function view($id = null)
     {
         $slide = $this->Slides->get($id, [
-            'contain' => ['Galleries']
+            'contain' => ['Sliders']
         ]);
 
         $this->set('slide', $slide);
@@ -61,8 +61,8 @@ class SlidesController extends AppController
                 $this->Flash->error(__('The slide could not be saved. Please, try again.'));
             }
         }
-        $galleries = $this->Slides->Galleries->find('list', ['limit' => 200]);
-        $this->set(compact('slide', 'galleries'));
+        $sliders = $this->Slides->Sliders->find('list', ['limit' => 200]);
+        $this->set(compact('slide', 'sliders'));
         $this->set('_serialize', ['slide']);
     }
 
@@ -87,8 +87,8 @@ class SlidesController extends AppController
                 $this->Flash->error(__('The slide could not be saved. Please, try again.'));
             }
         }
-        $galleries = $this->Slides->Galleries->find('list', ['limit' => 200]);
-        $this->set(compact('slide', 'galleries'));
+        $sliders = $this->Slides->Sliders->find('list', ['limit' => 200]);
+        $this->set(compact('slide', 'sliders'));
         $this->set('_serialize', ['slide']);
     }
 

@@ -16,7 +16,8 @@ class SlidesControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'plugin.simple_slider.slides'
+        'plugin.simple_slider.slides',
+        'plugin.simple_slider.sliders'
     ];
 
     /**

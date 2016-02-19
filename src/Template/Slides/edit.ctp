@@ -12,8 +12,8 @@ $this->start('tb_actions');
     ?>
     </li>
     <li><?= $this->Html->link(__('List Slides'), ['action' => 'index']) ?></li>
-    <li><?= $this->Html->link(__('List Galleries'), ['controller' => 'Galleries', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New Gallery'), ['controller' => 'Galleries', 'action' => 'add']) ?> </li>
+    <li><?= $this->Html->link(__('List Sliders'), ['controller' => 'Sliders', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('New Slider'), ['controller' => 'Sliders', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
 
@@ -29,8 +29,8 @@ $this->start('tb_sidebar');
     ?>
     </li>
     <li><?= $this->Html->link(__('List Slides'), ['action' => 'index']) ?></li>
-    <li><?= $this->Html->link(__('List Galleries'), ['controller' => 'Galleries', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New Gallery'), ['controller' => 'Galleries', 'action' => 'add']) ?> </li>
+    <li><?= $this->Html->link(__('List Sliders'), ['controller' => 'Sliders', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('New Slider'), ['controller' => 'Sliders', 'action' => 'add']) ?> </li>
 </ul>
 <?php
 $this->end();
@@ -39,11 +39,11 @@ $this->end();
 <fieldset>
     <legend><?= __('Edit {0}', ['Slide']) ?></legend>
     <?php
-    echo $this->Form->input('gallery_id', ['options' => $galleries]);
+    echo $this->Form->input('slider_id', ['options' => $sliders]);
     echo $this->Form->input('title');
     echo $this->Form->input('link');
     echo $this->Form->input('class');
-    echo $this->Form->input('attr_id');
+    echo $this->Form->input('identifier');
     echo $this->Form->input('caption');
     ?>
 </fieldset>

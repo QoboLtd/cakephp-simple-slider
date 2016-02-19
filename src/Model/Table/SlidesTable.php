@@ -10,8 +10,7 @@ use SimpleSlider\Model\Entity\Slide;
 /**
  * Slides Model
  *
- * @property \Cake\ORM\Association\BelongsTo $Galleries
- * @property \Cake\ORM\Association\BelongsTo $Attrs
+ * @property \Cake\ORM\Association\BelongsTo $Sliders
  */
 class SlidesTable extends Table
 {
@@ -32,10 +31,10 @@ class SlidesTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('Galleries', [
-            'foreignKey' => 'gallery_id',
+        $this->belongsTo('Sliders', [
+            'foreignKey' => 'slider_id',
             'joinType' => 'INNER',
-            'className' => 'SimpleSlider.Galleries'
+            'className' => 'SimpleSlider.Sliders'
         ]);
     }
 
@@ -64,6 +63,10 @@ class SlidesTable extends Table
             ->notEmpty('class');
 
         $validator
+            ->requirePresence('identifier', 'create')
+            ->notEmpty('identifier');
+
+        $validator
             ->requirePresence('caption', 'create')
             ->notEmpty('caption');
 
@@ -79,7 +82,7 @@ class SlidesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['gallery_id'], 'Galleries'));
+        $rules->add($rules->existsIn(['slider_id'], 'Sliders'));
         return $rules;
     }
 }

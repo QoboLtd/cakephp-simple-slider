@@ -7,13 +7,12 @@ use Cake\ORM\Entity;
  * Slide Entity.
  *
  * @property string $id
- * @property string $gallery_id
- * @property \SimpleSlider\Model\Entity\Gallery $gallery
+ * @property string $slider_id
+ * @property \App\Model\Entity\Slider $slider
  * @property string $title
  * @property string $link
  * @property string $class
- * @property string $attr_id
- * @property \SimpleSlider\Model\Entity\Attr $attr
+ * @property string $identifier
  * @property string $caption
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified

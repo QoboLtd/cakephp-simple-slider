@@ -25,8 +25,7 @@ class SlidesTableTest extends TestCase
      */
     public $fixtures = [
         'plugin.simple_slider.slides',
-        'plugin.simple_slider.galleries',
-        'plugin.simple_slider.attrs'
+        'plugin.simple_slider.sliders'
     ];
 
     /**
