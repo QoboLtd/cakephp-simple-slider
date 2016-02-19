@@ -27,6 +27,9 @@ class SlidersTable extends Table
         $this->table('sliders');
         $this->displayField('title');
         $this->primaryKey('id');
+        $this->hasMany('Slides', [
+            'dependent' => true
+        ]);
     }
 
     /**
