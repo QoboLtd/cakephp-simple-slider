@@ -11,10 +11,6 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
         </div>
         <table class="table table-striped" cellpadding="0" cellspacing="0">
             <tr>
-                <td><?= __('Id') ?></td>
-                <td><?= h($slide->id) ?></td>
-            </tr>
-            <tr>
                 <td><?= __('Slider') ?></td>
                 <td><?= $slide->has('slider') ? $this->Html->link($slide->slider->title, ['controller' => 'Sliders', 'action' => 'view', $slide->slider->id]) : '' ?></td>
             </tr>

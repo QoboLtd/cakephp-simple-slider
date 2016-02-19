@@ -11,10 +11,6 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Sliders information'));
         </div>
         <table class="table table-striped" cellpadding="0" cellspacing="0">
             <tr>
-                <td><?= __('Id') ?></td>
-                <td><?= h($slider->id) ?></td>
-            </tr>
-            <tr>
                 <td><?= __('Title') ?></td>
                 <td><?= h($slider->title) ?></td>
             </tr>

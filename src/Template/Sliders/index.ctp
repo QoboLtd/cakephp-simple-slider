@@ -7,7 +7,6 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Sliders information'));
     <table class="table table-striped" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th><?= $this->Paginator->sort('id'); ?></th>
                 <th><?= $this->Paginator->sort('title'); ?></th>
                 <th><?= $this->Paginator->sort('alias'); ?></th>
                 <th><?= $this->Paginator->sort('shuffle'); ?></th>
@@ -20,7 +19,6 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Sliders information'));
         <tbody>
             <?php foreach ($sliders as $slider): ?>
             <tr>
-                <td><?= h($slider->id) ?></td>
                 <td><?= h($slider->title) ?></td>
                 <td><?= h($slider->alias) ?></td>
                 <td><?= h($slider->shuffle) ?></td>

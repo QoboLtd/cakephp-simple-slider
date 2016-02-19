@@ -7,7 +7,6 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
     <table class="table table-striped" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th><?= $this->Paginator->sort('id'); ?></th>
                 <th><?= $this->Paginator->sort('slider_id'); ?></th>
                 <th><?= $this->Paginator->sort('title'); ?></th>
                 <th><?= $this->Paginator->sort('link'); ?></th>
@@ -20,7 +19,6 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
         <tbody>
             <?php foreach ($slides as $slide): ?>
             <tr>
-                <td><?= h($slide->id) ?></td>
                 <td>
                     <?= $slide->has('slider') ? $this->Html->link($slide->slider->title, ['controller' => 'Sliders', 'action' => 'view', $slide->slider->id]) : '' ?>
                 </td>
