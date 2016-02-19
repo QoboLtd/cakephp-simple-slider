@@ -26,7 +26,8 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Sliders information'));
                 <td><?= $this->Number->format($slider->delay) ?></td>
                 <td><?= h($slider->size) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link('', ['action' => 'view', $slider->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
+                    <?= $this->Html->link('', ['controller' => 'slides', 'action' => 'add', $slider->id], ['title' => __('Add Slide'), 'class' => 'btn btn-default glyphicon glyphicon-plus']) ?>
+                    <?= $this->Html->link('', ['controller' => 'slides', 'action' => 'index', $slider->id], ['title' => __('View slides of {0}', $slider->title), 'class' => 'btn btn-default glyphicon glyphicon-list-alt']) ?>
                     <?= $this->Html->link('', ['action' => 'edit', $slider->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
                     <?= $this->Form->postLink('', ['action' => 'delete', $slider->id], ['confirm' => __('Are you sure you want to delete # {0}?', $slider->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
                 </td>
