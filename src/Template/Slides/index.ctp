@@ -10,8 +10,8 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
                 <th><?= $this->Paginator->sort('title'); ?></th>
                 <th><?= $this->Paginator->sort('Image'); ?></th>
                 <th><?= $this->Paginator->sort('link'); ?></th>
-                <th><?= $this->Paginator->sort('class'); ?></th>
                 <th><?= $this->Paginator->sort('identifier'); ?></th>
+                <th><?= $this->Paginator->sort('class'); ?></th>
                 <th><?= $this->Paginator->sort('caption'); ?></th>
                 <th class="actions"><?= __('Actions'); ?></th>
             </tr>
@@ -20,16 +20,10 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
             <?php foreach ($slides as $slide): ?>
             <tr>
                 <td><?= h($slide->title) ?></td>
-                <?php
-                /**
-                 * @todo Look & feel temp.. fix.
-                 * Make sure to fill alt, id, class which are included in the entity object.
-                 */
-                 ?>
-                <td><?= $this->Html->image('//lorempixel.com/1200/300?' . $slide->title, ['class' => 'img-responsive']); ?></td>
+                <td><?= $this->Html->image($slide->img_src, ['class' => 'img-responsive']); ?></td>
                 <td><?= h($slide->link) ?></td>
-                <td><?= h($slide->class) ?></td>
                 <td><?= h($slide->identifier) ?></td>
+                <td><?= h($slide->class) ?></td>
                 <td><?= h($slide->caption) ?></td>
                 <td class="actions">
                     <?= $this->Html->link('', ['action' => 'edit', $slide->id, $slide->slider->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
