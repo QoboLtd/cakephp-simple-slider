@@ -57,18 +57,6 @@ class SlidesTable extends Table
         $validator
             ->requirePresence('link', 'create')
             ->notEmpty('link');
-
-        $validator
-            ->requirePresence('class', 'create')
-            ->notEmpty('class');
-
-        $validator
-            ->requirePresence('identifier', 'create')
-            ->notEmpty('identifier');
-
-        $validator
-            ->requirePresence('caption', 'create')
-            ->notEmpty('caption');
         $validator
             ->requirePresence('img_src', 'create')
             ->notEmpty('img_src')
