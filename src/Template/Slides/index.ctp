@@ -39,6 +39,9 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
             <?php endforeach; ?>
         </tbody>
     </table>
+    <div class="ctas">
+        <?= $this->Html->link(__('Back'), ['controller' => 'sliders'], ['class' => 'btn btn-default']) ?>
+    </div>
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
