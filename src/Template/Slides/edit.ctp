@@ -10,6 +10,7 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
         <?php
         echo $this->Form->hidden('slider_id', ['value' => $sliderId]);
         echo $this->Form->input('title');
+        echo $this->Form->input('img_src', ['label' => __('Image source file')]);
         echo $this->Form->input('link');
         echo $this->Form->input('class');
         echo $this->Form->input('identifier');

@@ -8,6 +8,7 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
         <thead>
             <tr>
                 <th><?= $this->Paginator->sort('title'); ?></th>
+                <th><?= $this->Paginator->sort('Image'); ?></th>
                 <th><?= $this->Paginator->sort('link'); ?></th>
                 <th><?= $this->Paginator->sort('class'); ?></th>
                 <th><?= $this->Paginator->sort('identifier'); ?></th>
@@ -19,6 +20,13 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
             <?php foreach ($slides as $slide): ?>
             <tr>
                 <td><?= h($slide->title) ?></td>
+                <?php
+                /**
+                 * @todo Look & feel temp.. fix.
+                 * Make sure to fill alt, id, class which are included in the entity object.
+                 */
+                 ?>
+                <td><?= $this->Html->image('//lorempixel.com/1200/300?' . $slide->title, ['class' => 'img-responsive']); ?></td>
                 <td><?= h($slide->link) ?></td>
                 <td><?= h($slide->class) ?></td>
                 <td><?= h($slide->identifier) ?></td>
