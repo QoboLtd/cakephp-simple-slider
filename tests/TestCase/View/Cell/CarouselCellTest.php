@@ -2,12 +2,12 @@
 namespace SimpleSlider\Test\TestCase\View\Cell;
 
 use Cake\TestSuite\TestCase;
-use SimpleSlider\View\Cell\GalleryCell;
+use SimpleSlider\View\Cell\CarouselCell;
 
 /**
- * SimpleSlider\View\Cell\GalleryCell Test Case
+ * SimpleSlider\View\Cell\CarouselCell Test Case
  */
-class GalleryCellTest extends TestCase
+class CarouselCellTest extends TestCase
 {
 
     /**
@@ -27,9 +27,9 @@ class GalleryCellTest extends TestCase
     /**
      * Test subject
      *
-     * @var \SimpleSlider\View\Cell\GalleryCell
+     * @var \SimpleSlider\View\Cell\CarouselCell
      */
-    public $Gallery;
+    public $Carousel;
 
     /**
      * setUp method
@@ -41,7 +41,7 @@ class GalleryCellTest extends TestCase
         parent::setUp();
         $this->request = $this->getMock('Cake\Network\Request');
         $this->response = $this->getMock('Cake\Network\Response');
-        $this->Gallery = new GalleryCell($this->request, $this->response);
+        $this->Carousel = new CarouselCell($this->request, $this->response);
     }
 
     /**
@@ -51,7 +51,7 @@ class GalleryCellTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Gallery);
+        unset($this->Carousel);
 
         parent::tearDown();
     }
