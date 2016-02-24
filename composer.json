@@ -1,5 +1,5 @@
 {
-    "name": "your-name-here/SimpleSlider",
+    "name": "qobo/cakephp-simple-slider",
     "description": "SimpleSlider plugin for CakePHP",
     "type": "cakephp-plugin",
     "require": {
