@@ -8,6 +8,12 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
     <fieldset>
         <legend><?= __('Edit {0}', ['Slide']) ?></legend>
         <?php
+        /**
+         * @todo: The plugin accepts prefix somewhere but I haven't found yet.
+         * @link: https://github.com/burzum/cakephp-file-storage/blob/1.1/docs/Documentation/Path-Builders.md
+         */
+        $imgUrl = '/uploads' . $this->Image->imageUrl($slide->slide_images[0]);
+        echo $this->Html->image($imgUrl, ['class' => 'img-responsive']);
         echo $this->Form->hidden('slider_id', ['value' => $sliderId]);
         echo $this->Form->input('title');
         echo $this->Form->input('link');

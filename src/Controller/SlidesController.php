@@ -27,7 +27,15 @@ class SlidesController extends AppController
             'contain' => ['Sliders']
         ];
         $query = $this->Slides
-            ->find()
+            ->find('all', [
+                'contain' => [
+                    'SlideImages' => [
+                        'sort' => [
+                            'created' => 'DESC'
+                        ]
+                    ]
+                ]
+            ])
             ->where(['slider_id' => $sliderId]);
         $slides = $this->paginate($query);
 
@@ -48,7 +56,10 @@ class SlidesController extends AppController
             $slide = $this->Slides->patchEntity($slide, $this->request->data);
             if ($this->Slides->save($slide)) {
                 $this->Flash->success(__('The slide has been saved.'));
-                return $this->redirect(['action' => 'index', $sliderId]);
+                if ($this->_upload($slide->get('id'))) {
+                    return $this->redirect(['action' => 'index', $sliderId]);
+                }
+                $this->Flash->error(__('Failed to upload image'));
             } else {
                 $this->Flash->error(__('The slide could not be saved. Please, try again.'));
             }
@@ -71,14 +82,22 @@ class SlidesController extends AppController
     public function edit($id = null, $sliderId = null)
     {
         $slide = $this->Slides->get($id, [
-            'contain' => []
+            'contain' => [
+                'SlideImages' => [
+                    'sort' => [
+                        'created' => 'DESC'
+                    ]
+                ]
+            ]
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $sliderId = $this->request->data['slider_id'];
             $slide = $this->Slides->patchEntity($slide, $this->request->data);
             if ($this->Slides->save($slide)) {
                 $this->Flash->success(__('The slide has been saved.'));
-                return $this->redirect(['action' => 'index', $sliderId]);
+                if ($this->request->data['file'] && $this->_upload($slide->get('id'))) {
+                    return $this->redirect(['action' => 'index', $sliderId]);
+                }
             } else {
                 $this->Flash->error(__('The slide could not be saved. Please, try again.'));
             }
