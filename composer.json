@@ -5,7 +5,9 @@
     "license": "GPL-2.0",
     "require": {
         "php": ">=5.4.16",
-        "cakephp/cakephp": "~3.0"
+        "cakephp/cakephp": "~3.0",
+        "burzum/cakephp-file-storage": "^1.1",
+        "burzum/cakephp-imagine-plugin": "^2.1"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
