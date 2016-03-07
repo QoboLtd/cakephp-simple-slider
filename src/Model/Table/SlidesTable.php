@@ -36,6 +36,13 @@ class SlidesTable extends Table
             'joinType' => 'INNER',
             'className' => 'SimpleSlider.Sliders'
         ]);
+        $this->hasMany('SlideImages', [
+            'className' => 'SimpleSlider.SlideImages',
+            'foreignKey' => 'foreign_key',
+            'conditions' => [
+                'SlideImages.model' => 'SlideImage'
+            ]
+        ]);
     }
 
     /**
