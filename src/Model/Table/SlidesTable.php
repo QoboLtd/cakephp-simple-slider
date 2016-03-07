@@ -64,20 +64,6 @@ class SlidesTable extends Table
         $validator
             ->requirePresence('link', 'create')
             ->notEmpty('link');
-        $validator
-            ->requirePresence('img_src', 'create')
-            ->notEmpty('img_src')
-            ->add('img_src', 'custom', [
-                'rule' => function ($value, $context) {
-                    $path = WWW_ROOT . 'img' . DS . $value;
-                    if (file_exists($path)) {
-                        return true;
-                    }
-
-                    return false;
-                },
-                'message' => __('File does not exist')
-            ]);
 
         return $validator;
     }

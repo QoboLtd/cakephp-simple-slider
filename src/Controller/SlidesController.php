@@ -109,4 +109,25 @@ class SlidesController extends AppController
         }
         return $this->redirect(['action' => 'index', $sliderId]);
     }
+
+    /**
+     * Uploads and stores the related file.
+     *
+     * @param  int|null $slideId id of the relate slide
+     * @return boolean           flag
+     */
+    protected function _upload($slideId = null)
+    {
+        $entity = $this->Slides->SlideImages->newEntity();
+        $entity = $this->Slides->SlideImages->patchEntity(
+            $entity,
+            $this->request->data
+        );
+        if ($this->Slides->SlideImages->uploadImage($slideId, $entity)) {
+            $this->Flash->set(__('Upload successful'));
+            return true;
+        }
+
+        return false;
+    }
 }
