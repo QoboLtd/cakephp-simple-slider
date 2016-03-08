@@ -16,6 +16,6 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
         echo $this->Form->error('file');
         ?>
     </fieldset>
-    <?= $this->Form->button(__("Add!"), ['class' => 'btn-primary']); ?>
+    <?= $this->Form->button(__("Add"), ['class' => 'btn-primary']); ?>
     <?= $this->Form->end() ?>
 </div>
