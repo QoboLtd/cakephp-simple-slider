@@ -16,16 +16,9 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
         </thead>
         <tbody>
             <?php foreach ($slides as $slide): ?>
-            <?php
-                /**
-                 * @todo: The plugin accepts prefix somewhere but I haven't found yet.
-                 * @link: https://github.com/burzum/cakephp-file-storage/blob/1.1/docs/Documentation/Path-Builders.md
-                 */
-                $imgUrl = '/uploads' . $this->Image->imageUrl($slide->slide_images[0])
-            ?>
             <tr>
                 <td><?= h($slide->title) ?></td>
-                <td><?= $this->Html->image($imgUrl, ['class' => 'img-responsive']); ?></td>
+                <td><?= $this->Image->display($slide->slide_images[0], 'medium'); ?></td>
                 <td><?= h($slide->link) ?></td>
                 <td><?= h($slide->caption) ?></td>
                 <td class="actions">
