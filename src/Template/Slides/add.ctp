@@ -11,13 +11,11 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
         echo $this->Form->hidden('slider_id', ['value' => $sliderId]);
         echo $this->Form->input('title');
         echo $this->Form->input('link');
-        echo $this->Form->input('class');
-        echo $this->Form->input('identifier');
         echo $this->Form->input('caption');
         echo $this->Form->file('file');
         echo $this->Form->error('file');
         ?>
     </fieldset>
-    <?= $this->Form->button(__("Add")); ?>
+    <?= $this->Form->button(__("Add!"), ['class' => 'btn-primary']); ?>
     <?= $this->Form->end() ?>
 </div>
