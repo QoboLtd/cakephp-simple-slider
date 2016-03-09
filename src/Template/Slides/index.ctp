@@ -22,8 +22,8 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
                 <td><?= h($slide->link) ?></td>
                 <td><?= h($slide->caption) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link('', ['action' => 'edit', $slide->id, $slide->slider->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
-                    <?= $this->Form->postLink('', ['action' => 'delete', $slide->id, $slide->slider->id], ['confirm' => __('Are you sure you want to delete # {0}?', $slide->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
+                    <?= $this->Html->link('', ['action' => 'edit', $slide->id, $slide->slider_id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
+                    <?= $this->Form->postLink('', ['action' => 'delete', $slide->id, $slide->slider_id], ['confirm' => __('Are you sure you want to delete # {0}?', $slide->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
