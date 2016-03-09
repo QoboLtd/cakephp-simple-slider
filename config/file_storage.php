@@ -8,12 +8,7 @@ use Cake\Event\EventManager;
 StorageManager::config(
     'Local',
     [
-        /**
-         * Application MUST have media folder in the root folder
-         * which symlinks with webroot/img/uploads
-         * @link: https://github.com/burzum/cakephp-file-storage/blob/1.1/docs/Documentation/Specific-Adapter-Configurations.md#local-filesystem
-         */
-        'adapterOptions' => [ROOT . DS . 'media', true],
+        'adapterOptions' => [WWW_ROOT . DS . 'img', true],
         'adapterClass' => '\Gaufrette\Adapter\Local',
         'class' => '\Gaufrette\Filesystem'
     ]
