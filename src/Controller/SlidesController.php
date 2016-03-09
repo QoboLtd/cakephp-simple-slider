@@ -39,7 +39,7 @@ class SlidesController extends AppController
             ->where(['slider_id' => $sliderId]);
 
         if ($query->isEmpty()) {
-            $this->Flash->set(__('No sliders were found. Please add one.'));
+            $this->Flash->set(__('No slides were found. Please add one.'));
             return $this->redirect(['action' => 'add', $sliderId]);
         }
         $slides = $this->paginate($query);
