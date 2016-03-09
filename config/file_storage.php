@@ -8,7 +8,7 @@ use Cake\Event\EventManager;
 StorageManager::config(
     'Local',
     [
-        'adapterOptions' => [WWW_ROOT . DS . 'img', true],
+        'adapterOptions' => [WWW_ROOT, true],
         'adapterClass' => '\Gaufrette\Adapter\Local',
         'class' => '\Gaufrette\Filesystem'
     ]
@@ -17,7 +17,7 @@ StorageManager::config(
 $listener = new BaseListener([
     'imageProcessing' => true,
     'pathBuilderOptions' => [
-        'pathPrefix' => 'uploads'
+        'pathPrefix' => '/uploads'
     ]
 ]);
 
