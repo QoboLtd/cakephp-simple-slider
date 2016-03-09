@@ -15,10 +15,6 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Sliders information'));
         <tr>
             <th><?= $this->Paginator->sort('title'); ?></th>
             <th><?= $this->Paginator->sort('alias'); ?></th>
-            <th><?= $this->Paginator->sort('shuffle'); ?></th>
-            <th><?= $this->Paginator->sort('hover'); ?></th>
-            <th><?= $this->Paginator->sort('delay'); ?></th>
-            <th><?= $this->Paginator->sort('size'); ?></th>
             <th class="actions"><?= __('Actions'); ?></th>
         </tr>
     </thead>
@@ -27,10 +23,6 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Sliders information'));
         <tr>
             <td><?= h($slider->title) ?></td>
             <td><?= h($slider->alias) ?></td>
-            <td><?= h($slider->shuffle) ?></td>
-            <td><?= h($slider->hover) ?></td>
-            <td><?= $this->Number->format($slider->delay) ?></td>
-            <td><?= h($slider->size) ?></td>
             <td class="actions">
                 <?= $this->Html->link('', ['controller' => 'slides', 'action' => 'add', $slider->id], ['title' => __('Add Slide'), 'class' => 'btn btn-default glyphicon glyphicon-plus']) ?>
                 <?= $this->Html->link('', ['controller' => 'slides', 'action' => 'index', $slider->id], ['title' => __('View slides of {0}', $slider->title), 'class' => 'btn btn-default glyphicon glyphicon-list-alt']) ?>

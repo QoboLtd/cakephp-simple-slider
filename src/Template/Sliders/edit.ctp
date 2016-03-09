@@ -10,10 +10,6 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Sliders information'));
         <?php
         echo $this->Form->input('title');
         echo $this->Form->input('alias');
-        echo $this->Form->input('delay');
-        echo $this->Form->input('size');
-        echo $this->Form->input('shuffle');
-        echo $this->Form->input('hover');
         ?>
     </fieldset>
     <?= $this->Form->button(__("Save")); ?>

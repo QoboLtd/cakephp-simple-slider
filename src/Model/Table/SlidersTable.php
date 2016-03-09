@@ -55,25 +55,6 @@ class SlidersTable extends Table
             ->requirePresence('alias', 'create')
             ->notEmpty('alias');
 
-        $validator
-            ->boolean('shuffle')
-            ->requirePresence('shuffle', 'create')
-            ->notEmpty('shuffle');
-
-        $validator
-            ->boolean('hover')
-            ->requirePresence('hover', 'create')
-            ->notEmpty('hover');
-
-        $validator
-            ->integer('delay')
-            ->requirePresence('delay', 'create')
-            ->notEmpty('delay');
-
-        $validator
-            ->requirePresence('size', 'create')
-            ->notEmpty('size');
-
         return $validator;
     }
 }
