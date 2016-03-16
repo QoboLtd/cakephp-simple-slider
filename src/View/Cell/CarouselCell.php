@@ -26,13 +26,8 @@ class CarouselCell extends Cell
      */
     public function display($alias = null)
     {
-        $this->loadModel('Sliders');
-        $this->loadModel('Slides');
-        $sliderQuery = $this->Sliders->find()->where(['alias' => $alias])->first();
-        if (!$sliderQuery) {
-            throw new RecordNotFoundException(__('Cannot find the given slider!'));
-        }
-        $slideQuery = $this->Slides->find()->where(['slider_id' => $sliderQuery->id]);
-        $this->set(['alias' => $alias, 'slides' => $slideQuery]);
+        $this->loadModel('SimpleSlider.Sliders');
+        $slides = $this->Sliders->Slides->find('WithLatestImage');
+        $this->set(compact('slides', 'alias'));
     }
 }
