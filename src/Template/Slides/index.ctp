@@ -18,7 +18,7 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
             <?php foreach ($slides as $slide): ?>
             <tr>
                 <td><?= h($slide->title) ?></td>
-                <td><?= $this->Image->display($slide->slide_images[0], 'medium'); ?></td>
+                <td><?= $this->Image->display($slide->slide_images[0], 'small'); ?></td>
                 <td><?= h($slide->link) ?></td>
                 <td><?= h($slide->caption) ?></td>
                 <td class="actions">
