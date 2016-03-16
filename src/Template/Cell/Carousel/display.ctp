@@ -1,4 +1,7 @@
 <?php
+if (!$slides) {
+    return false;
+}
 $carouselId = 'carousel-' . $alias; ?>
 <div id="<?= $carouselId ?>" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -12,18 +15,7 @@ $carouselId = 'carousel-' . $alias; ?>
   <div class="carousel-inner" role="listbox">
     <?php foreach ($slides as $key => $slide) : ?>
         <div <?= ($slide->identifier) ? 'id="' . $slide->identifier . '"' : ''; ?>  class="item <?= (!$key) ? 'active' : ''; ?> <?= $slide->class ?>">
-            <?php
-            if (!$slide->link) :
-                echo $this->Html->image($slide->img_src, [
-                    'alt' => $slide->caption,
-                ]);
-            else :
-                echo $this->Html->link(
-                    $this->Html->image($slide->img_src, ['alt' => $slide->caption]),
-                    $slide->link,
-                    ['escape' => false]
-                );
-            endif; ?>
+            <?= $this->Image->display($slide->slide_images[0], 'medium'); ?>
             <div class="carousel-caption"><?= $slide->caption; ?></div>
         </div>
     <?php endforeach; ?>

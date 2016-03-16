@@ -80,4 +80,21 @@ class SlidesTable extends Table
         $rules->add($rules->existsIn(['slider_id'], 'Sliders'));
         return $rules;
     }
+
+    /**
+     * Reusable Query that return slides with the latest associated image.
+     *
+     * @param  Query  $query   To proceess it
+     * @param  array  $options Extra options can be passed.
+     * @return Query  $query   Return the query object which can be chained as usual.
+     */
+    public function findWithLatestImage(Query $query, array $options)
+    {
+        $query = $query
+            ->find('all')
+            ->order(['created' => 'DESC'])
+            ->contain(['SlideImages' => ['sort' => ['created' => 'DESC']]]);
+
+        return $query;
+    }
 }
