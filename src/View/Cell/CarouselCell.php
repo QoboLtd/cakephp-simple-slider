@@ -28,6 +28,7 @@ class CarouselCell extends Cell
     {
         $this->loadModel('SimpleSlider.Sliders');
         $slides = $this->Sliders->Slides->find('WithLatestImage');
+        $slides = !$slides->isEmpty() ? $slides : false;
         $this->set(compact('slides', 'alias'));
     }
 }
