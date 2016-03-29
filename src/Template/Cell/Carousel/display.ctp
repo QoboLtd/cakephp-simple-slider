@@ -15,7 +15,13 @@ $carouselId = 'carousel-' . $alias; ?>
   <div class="carousel-inner" role="listbox">
     <?php foreach ($slides as $key => $slide) : ?>
         <div <?= ($slide->identifier) ? 'id="' . $slide->identifier . '"' : ''; ?>  class="item <?= (!$key) ? 'active' : ''; ?> <?= $slide->class ?>">
-            <?= $this->Image->display($slide->slide_images[0], 'medium'); ?>
+            <?php
+            $options = [];
+            if (!empty($slide->link)) :
+              $options += ['url' => $slide->link];
+            endif;
+            ?>
+            <?= $this->Image->display($slide->slide_images[0], 'medium', $options); ?>
             <div class="carousel-caption"><?= $slide->caption; ?></div>
         </div>
     <?php endforeach; ?>
