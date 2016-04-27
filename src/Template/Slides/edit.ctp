@@ -7,7 +7,7 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
 <fieldset>
     <legend><?= __('Edit {0}', ['Slide']) ?></legend>
     <?php
-    echo $this->Image->display($slide->slide_images[0], 'large', ['class' => 'img-responsive']);
+    echo $this->Image->display($slide->slide_images[0], 'medium', ['class' => 'img-responsive']);
     echo $this->Form->hidden('slider_id', ['value' => $sliderId]);
     echo $this->Form->input('title');
     echo $this->Form->input('link');
