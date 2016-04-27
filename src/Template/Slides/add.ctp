@@ -12,6 +12,7 @@ $this->assign('panel-title', __d('QoboAdminPanel', 'Slides information'));
         echo $this->Form->input('title');
         echo $this->Form->input('link');
         echo $this->Form->input('caption');
+        echo $this->Form->input('new_tab');
         echo $this->Form->file('file');
         echo $this->Form->error('file');
         ?>
