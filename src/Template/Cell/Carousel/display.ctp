@@ -2,7 +2,12 @@
 if (!$slides) {
     return false;
 }
-$carouselId = 'carousel-' . $alias; ?>
+$carouselId = 'carousel-' . $alias;
+$imageOptions = [];
+$linkOptions = [
+    'escape' => false,
+];
+?>
 <div id="<?= $carouselId ?>" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -16,12 +21,16 @@ $carouselId = 'carousel-' . $alias; ?>
         <?php foreach ($slides as $key => $slide) : ?>
             <div <?= ($slide->identifier) ? 'id="' . $slide->identifier . '"' : ''; ?>  class="item <?= (!$key) ? 'active' : ''; ?> <?= $slide->class ?>">
                 <?php
-                $options = [];
-                if (!empty($slide->link)) :
-                  $options += ['url' => $slide->link];
+                $imageOptions['alt'] = $slide->get('caption');
+                $image = $this->Image->display($slide->slide_images[0], 'medium', $imageOptions);
+                $link = $slide->get('link');
+                if ($link) :
+                    $linkOptions['target'] = $slide->get('new_tab') ? '_blank' : '_self';
+                    echo $this->Html->link($image, $link, $linkOptions);
+                else :
+                    echo $image;
                 endif;
                 ?>
-                <?= $this->Image->display($slide->slide_images[0], 'medium', $options); ?>
                 <div class="carousel-caption"><?= $slide->caption; ?></div>
             </div>
         <?php endforeach; ?>
