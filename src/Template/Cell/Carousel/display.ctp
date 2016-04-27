@@ -3,11 +3,9 @@ if (!$slides) {
     return false;
 }
 $carouselId = 'carousel-' . $alias;
-
 $imageOptions = [];
 $linkOptions = [
     'escape' => false,
-    'target' => '_blank',
 ];
 ?>
 <div id="<?= $carouselId ?>" class="carousel slide" data-ride="carousel">
@@ -27,6 +25,7 @@ $linkOptions = [
                 $image = $this->Image->display($slide->slide_images[0], 'medium', $imageOptions);
                 $link = $slide->get('link');
                 if ($link) :
+                    $linkOptions['target'] = $slide->get('new_tab') ? '_blank' : '_self';
                     echo $this->Html->link($image, $link, $linkOptions);
                 else :
                     echo $image;
