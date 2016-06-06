@@ -31,7 +31,12 @@ $linkOptions = [
                     echo $image;
                 endif;
                 ?>
-                <div class="carousel-caption"><?= $slide->caption; ?></div>
+                <?php
+                if ($slide->caption) : ?>
+                    <div class="carousel-caption"><?= $slide->caption; ?></div>
+                <?php
+                endif;
+                ?>
             </div>
         <?php endforeach; ?>
     </div>
