@@ -15,7 +15,8 @@ class SlidesController extends AppController
     /**
      * Index method
      *
-     * @return void
+     * @param mixed $sliderId Slider ID
+     * @return \Cake\Network\Response|void
      */
     public function index($sliderId = null)
     {
@@ -51,6 +52,7 @@ class SlidesController extends AppController
     /**
      * Add method
      *
+     * @param mixed $sliderId Slider ID
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
     public function add($sliderId = null)
@@ -81,6 +83,7 @@ class SlidesController extends AppController
      * Edit method
      *
      * @param string|null $id Slide id.
+     * @param mixed $sliderId Slider ID
      * @return \Cake\Network\Response|void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
@@ -119,10 +122,11 @@ class SlidesController extends AppController
      * Delete method
      *
      * @param string|null $id Slide id.
+     * @param mixed $sliderId Slider ID
      * @return \Cake\Network\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function delete($id = null, $sliderId)
+    public function delete($id = null, $sliderId = null)
     {
         $this->request->allowMethod(['post', 'delete']);
         $slide = $this->Slides->get($id);
@@ -138,7 +142,7 @@ class SlidesController extends AppController
      * Uploads and stores the related file.
      *
      * @param  int|null $slideId id of the relate slide
-     * @return boolean           flag
+     * @return bool           flag
      */
     protected function _upload($slideId = null)
     {
