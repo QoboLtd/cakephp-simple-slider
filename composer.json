@@ -10,7 +10,8 @@
         "burzum/cakephp-imagine-plugin": "^2.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "*",
+        "cakephp/cakephp-codesniffer": "dev-master"
     },
     "autoload": {
         "psr-4": {
